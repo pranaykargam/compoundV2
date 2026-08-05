@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 pragma solidity >=0.5.11;
 
-import "./05-ctoken-interest-ref.sol";
+import "./ctokeninterest.sol";
 
 /// @title CToken Mint — Supplying assets to the protocol
 /// @notice When a user supplies underlying tokens, they receive cTokens in return.
@@ -14,7 +14,7 @@ import "./05-ctoken-interest-ref.sol";
 ///
 ///      Key difference: Compound only requires ONE token (the underlying), and the
 ///      exchange rate replaces Uniswap's two-token reserve ratio.
-contract CTokenMint is CTokenInterest {
+abstract contract CTokenMint is CTokenInterest {
 
     /// @notice Sender supplies underlying tokens and receives cTokens.
     /// @dev Called by CErc20.mint() after transferring tokens in.

@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: 
+// SPDX-License-Identifier: BSD-3-Clause
 pragma solidity >=0.5.11;
 
 /// @title InterestRateModel — Interface for interest rate calculations

@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 pragma solidity >=0.5.11;
 
-import "./06-ctoken-mint-ref.sol";
+import "./CTokenMint.sol";
 
 /// @title CToken Redeem — Withdrawing assets from the protocol
 /// @notice Users burn cTokens to receive underlying tokens. Two variants:
@@ -12,7 +12,7 @@ import "./06-ctoken-mint-ref.sol";
 ///      this redemption would make the user's position undercollateralized. In Uniswap,
 ///      you can always burn LP tokens. In Compound, you might be blocked if those cTokens
 ///      are being used as collateral for a borrow.
-contract CTokenRedeem is CTokenMint {
+abstract contract CTokenRedeem is CTokenMint {
 
     /// @notice Redeem cTokens for underlying. Specify the cToken amount to burn.
     /// @param redeemTokens The number of cTokens to burn

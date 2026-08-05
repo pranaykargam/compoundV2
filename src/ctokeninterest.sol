@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: BSD-3-Clause
 pragma solidity >=0.5.11;
 
-import "./04-ctoken-state-ref.sol";
+import "./CTokenStorage.sol";
 
 /// @title CToken Interest — Exchange rate and interest accrual logic
 /// @notice This section adds the two most fundamental functions of the CToken:
@@ -17,7 +17,7 @@ import "./04-ctoken-state-ref.sol";
 ///      accrueInterest() is called at the START of every user-facing function.
 ///      It uses simple interest per block (not compound interest). The compounding
 ///      effect comes from frequent calls.
-contract CTokenInterest is CTokenStorage {
+abstract contract CTokenInterest is CTokenStorage {
 
     /// @notice Get the current amount of underlying tokens held by this contract.
     /// @dev Must be overridden by CErc20 (uses balanceOf) or CEther (uses address.balance).
